@@ -91,20 +91,21 @@ flutter run
 
 ### 1. Halaman Utama
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/9bfcce38-1275-4dd9-91d0-7ee2a17f4da8" width="600"/>
+  <img src="https://github.com/user-attachments/assets/5c370ded-2e8e-478a-9c08-a2dc02f2818a" width="600"/>
 </p>
 
 ### 2. Halaman Tambah Insiden
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/f6fc3cae-ada7-4f6e-bad4-939d68faed9d" width="600"/>
+  <img src="https://github.com/user-attachments/assets/cfeaadc5-8fa3-4641-9ca7-6ada2922ce39" width="600"/>
 </p>
 
 ### 3. Halaman Setelah Tambah Insiden
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/759386fe-71a1-4d3e-bd46-04e586bb6954" width="600"/>
+  <img src="https://github.com/user-attachments/assets/34e6f587-fb6c-4736-8e32-4b60bc496039" width="600"/>
 </p>
 
 ### 4. Halaman Update Insiden
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/29dbbd5f-db81-4ee7-ae51-ad1f65feecf0" width="600"/>
+  <img src="https://github.com/user-attachments/assets/30893e51-573b-43f7-b83d-b053f93d5f6f" width="600"/>
 </p>
+
