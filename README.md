@@ -3,7 +3,7 @@
 ## Deskripsi Aplikasi
 Cyber Incident Log App adalah aplikasi mobile berbasis Flutter yang digunakan untuk mencatat insiden keamanan siber. Aplikasi ini memungkinkan pengguna untuk menambahkan, melihat, mengubah, dan menghapus data insiden keamanan.
 
-Aplikasi ini dibuat untuk memenuhi tugas CRUD (Create, Read, Update, Delete) pada mata kuliah Mobile Programming.
+Aplikasi ini dibuat untuk memenuhi tugas CRUD (Create, Read, Update, Delete) pada mata kuliah Pemograman Aplikasi Bergerak.
 
 ## Struktur Folder Inti
 
