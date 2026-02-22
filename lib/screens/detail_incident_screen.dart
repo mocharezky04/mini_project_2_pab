@@ -15,18 +15,26 @@ class DetailIncidentScreen extends StatefulWidget {
 class _DetailIncidentScreenState extends State<DetailIncidentScreen> {
   late TextEditingController _titleController;
   late TextEditingController _dateController;
-  late TextEditingController _severityController;
   late TextEditingController _descriptionController;
-  late TextEditingController _statusController;
+  late String _selectedSeverity;
+  late String _selectedStatus;
 
   @override
   void initState() {
     super.initState();
     _titleController = TextEditingController(text: widget.incident.title);
     _dateController = TextEditingController(text: widget.incident.date);
-    _severityController = TextEditingController(text: widget.incident.severity);
     _descriptionController = TextEditingController(text: widget.incident.description);
-    _statusController = TextEditingController(text: widget.incident.status);
+    _selectedSeverity = widget.incident.severity;
+    _selectedStatus = widget.incident.status;
+  }
+
+  @override
+  void dispose() {
+    _titleController.dispose();
+    _dateController.dispose();
+    _descriptionController.dispose();
+    super.dispose();
   }
 
   @override
@@ -37,33 +45,94 @@ class _DetailIncidentScreenState extends State<DetailIncidentScreen> {
       appBar: AppBar(
         title: const Text('Detail Insiden'),
       ),
-      body: Padding(
+      body: ListView(
         padding: const EdgeInsets.all(16),
-        child: ListView(
-          children: [
-            TextField(controller: _titleController, decoration: const InputDecoration(labelText: 'Judul')),
-            TextField(controller: _dateController, decoration: const InputDecoration(labelText: 'Tanggal')),
-            TextField(controller: _severityController, decoration: const InputDecoration(labelText: 'Severity')),
-            TextField(controller: _descriptionController, decoration: const InputDecoration(labelText: 'Deskripsi')),
-            TextField(controller: _statusController, decoration: const InputDecoration(labelText: 'Status')),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                provider.updateIncident(
-                  widget.incident.id,
-                  _titleController.text,
-                  _dateController.text,
-                  _severityController.text,
-                  _descriptionController.text,
-                  _statusController.text,
-                );
-                Navigator.pop(context);
-              },
-              child: const Text('Update'),
-            )
-          ],
-        ),
+        children: [
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Update Data Insiden',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                  ),
+                  const SizedBox(height: 6),
+                  const Text(
+                    'Lakukan perubahan lalu simpan.',
+                    style: TextStyle(color: Color(0xFF667085)),
+                  ),
+                  const SizedBox(height: 16),
+                  TextField(
+                    controller: _titleController,
+                    decoration: const InputDecoration(labelText: 'Judul'),
+                  ),
+                  const SizedBox(height: 12),
+                  TextField(
+                    controller: _dateController,
+                    decoration: const InputDecoration(labelText: 'Tanggal'),
+                  ),
+                  const SizedBox(height: 12),
+                  DropdownButtonFormField<String>(
+                    initialValue: _selectedSeverity,
+                    decoration: const InputDecoration(labelText: 'Severity'),
+                    items: const [
+                      DropdownMenuItem(value: 'Low', child: Text('Low')),
+                      DropdownMenuItem(value: 'Medium', child: Text('Medium')),
+                      DropdownMenuItem(value: 'High', child: Text('High')),
+                    ],
+                    onChanged: (value) {
+                      if (value != null) {
+                        setState(() => _selectedSeverity = value);
+                      }
+                    },
+                  ),
+                  const SizedBox(height: 12),
+                  DropdownButtonFormField<String>(
+                    initialValue: _selectedStatus,
+                    decoration: const InputDecoration(labelText: 'Status'),
+                    items: const [
+                      DropdownMenuItem(value: 'Open', child: Text('Open')),
+                      DropdownMenuItem(value: 'Closed', child: Text('Closed')),
+                    ],
+                    onChanged: (value) {
+                      if (value != null) {
+                        setState(() => _selectedStatus = value);
+                      }
+                    },
+                  ),
+                  const SizedBox(height: 12),
+                  TextField(
+                    controller: _descriptionController,
+                    minLines: 3,
+                    maxLines: 4,
+                    decoration: const InputDecoration(labelText: 'Deskripsi'),
+                  ),
+                  const SizedBox(height: 20),
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      provider.updateIncident(
+                        widget.incident.id,
+                        _titleController.text,
+                        _dateController.text,
+                        _selectedSeverity,
+                        _descriptionController.text,
+                        _selectedStatus,
+                      );
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(Icons.check_circle_outline),
+                    label: const Text('Update Insiden'),
+                  )
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
 }
+
+
