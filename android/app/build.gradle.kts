@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.minpro_1_aplikasi_pencatatan_insiden_keamanan"
+    namespace = "com.example.cyber_incident_log"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -21,7 +21,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.minpro_1_aplikasi_pencatatan_insiden_keamanan"
+        applicationId = "com.example.cyber_incident_log"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion

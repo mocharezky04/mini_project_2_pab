@@ -1,6 +1,6 @@
 {
-    "name": "minpro_1_aplikasi_pencatatan_insiden_keamanan",
-    "short_name": "minpro_1_aplikasi_pencatatan_insiden_keamanan",
+    "name": "Cyber Incident Log",
+    "short_name": "Cyber Incident Log",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
