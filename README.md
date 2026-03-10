@@ -80,3 +80,25 @@ flutter pub get
 ```bash
 flutter run
 ```
+
+## Screenshot Nilai Tambah
+
+### 1. Halaman Login
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f5d3c7c2-ba5e-4e34-b1b8-4390a1653378" width="600"/>
+</p>
+
+### 2. Halaman Register
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d7a3256b-bc9c-4c4a-8345-71d1accb9081" width="600"/>
+</p>
+
+### 3. Halaman DarkMode/mengiktui sistem
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/83b3231d-bf1a-4a8d-9c2a-ccfdf0dfaa10" width="600"/>
+</p>
+
+### 4. Halaman LightMode
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/551debca-815f-45ff-84ed-b7ca67e5fd59" width="600"/>
+</p>
